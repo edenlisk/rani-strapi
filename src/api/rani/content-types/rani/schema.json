@@ -1,0 +1,57 @@
+{
+  "kind": "singleType",
+  "collectionName": "ranis",
+  "info": {
+    "singularName": "rani",
+    "pluralName": "ranis",
+    "displayName": "Rani"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "companyOverview": {
+      "type": "blocks",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "ourMission": {
+      "type": "blocks",
+      "required": true
+    },
+    "aboutUs": {
+      "type": "blocks",
+      "required": true
+    },
+    "social_medias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social-media.social-media"
+    },
+    "histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::history.history"
+    }
+  }
+}
