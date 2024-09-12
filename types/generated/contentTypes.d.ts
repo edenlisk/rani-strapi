@@ -961,6 +961,37 @@ export interface ApiRaniRani extends Schema.SingleType {
   };
 }
 
+export interface ApiReportReport extends Schema.CollectionType {
+  collectionName: 'reports';
+  info: {
+    singularName: 'report';
+    pluralName: 'reports';
+    displayName: 'Report';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    document: Attribute.Media<'files' | 'images', true> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::report.report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::report.report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -1049,6 +1080,7 @@ declare module '@strapi/types' {
       'api::history.history': ApiHistoryHistory;
       'api::message.message': ApiMessageMessage;
       'api::rani.rani': ApiRaniRani;
+      'api::report.report': ApiReportReport;
       'api::service.service': ApiServiceService;
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
     }
