@@ -4,7 +4,8 @@
   "info": {
     "singularName": "rani",
     "pluralName": "ranis",
-    "displayName": "Rani"
+    "displayName": "Rani",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,12 +17,12 @@
       "required": true
     },
     "logo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "companyOverview": {
       "type": "blocks",
@@ -52,6 +53,15 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::history.history"
+    },
+    "country": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
     }
   }
 }
