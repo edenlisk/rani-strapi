@@ -62,6 +62,40 @@
     },
     "district": {
       "type": "string"
+    },
+    "contactImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "homeImages": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "openHours": {
+      "type": "string"
+    },
+    "homeMainText": {
+      "type": "text"
+    },
+    "homeSubText": {
+      "type": "string"
+    },
+    "aboutUsImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
